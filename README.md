@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/rfechtner/webflowpy.svg?branch=master)](https://travis-ci.org/rfechtner/webflowpy)
+
 # Webflow CMS API Client
 
 ## Disclamer 

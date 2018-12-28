@@ -4,8 +4,11 @@ import os
 configfile = 'C:/Users/rfechtner/PycharmProjects/webflowpy/config.ini'
 """Config file path"""
 
-config = configparser.ConfigParser()
-config.read(configfile)
+try:
+    config = configparser.ConfigParser()
+    config.read(configfile)
+except Exception:
+    config = {}
 
 if 'verbosity' in config['General']:
     verbosity = int(config['General']['verbosity'])
