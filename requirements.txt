@@ -2,5 +2,4 @@ psutil
 colorama
 requests
 urllib3
-json
 typing
