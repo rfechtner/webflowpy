@@ -7,10 +7,3 @@ install:
 - pip install -e .
 script:
 - pytest
-deploy:
-  provider: pypi
-  user: rfechtner
-  password:
-    secure: HlxygFBCeVn/eWNlBQAejusp1RYCa9qpHLl3EhzEozjcempAHu3ZW+CmUihfgK/A0sKXJ+LdYS7gJ5J6QA1RbQURf2rOGOfZXxQKYvt1NXzvJaxefXe/UNlH7WszLF6UfyweL9xlUp6QyWjJlE4fRSFjL0QoTCK517GJaeG6+9wXWi3RYlgqt9ycauYAQWXj6/kltS3Zp6E3ez/BuNSxBzW71+LwJVN5foAym2bgOX0GJeCz2I3NY884p2NCAm9yZaTNyIAWT+IKQoSHJ0Qy1dxTdqkDrnDBbu6TEDHiognCtwA2ulUQplgiJQW6P2Pxw/0bhxtXr2xrco8PC9DrBwjM3HmLpGOWPDvzdFrKp4NzimPeRcEvtoEY1XPiOnDug2qjVDpMeCg9pL6GxprwlQEf4fiSQsPy2kF4w3zhDBiqHf5jqB0oZRMxIduVOqQp9aE57HQfsMIiVe2CC2h3K78lMIodGPevh3ppTSdyTHBOBrv0JBo/4665q7ladtOz/0D5b4l8nwlIOc1nmPp7hi+qDjUdkkR/gtsuTrLYQaVSBTMMiCrUqjYXwMHUV6EcArFbLdoh+Z1B4x++AzpbBTPZnl/dqT1R1zWvn6pKCED+8p7Mn6+xiyFbVwMCnyk6xZoyMqGEBJnpmLrbBiC1iJX0e42j6b5fdBMfQA+gl0U=
-  on:
-    tags: true
