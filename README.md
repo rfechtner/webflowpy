@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/rfechtner/webflowpy.svg?branch=master)](https://travis-ci.org/rfechtner/webflowpy) [![PyPi Version](https://img.shields.io/pypi/v/Webflowpy.svg)](https://pypi.org/project/Webflowpy)
+[![Build Status](https://travis-ci.com/rfechtner/webflowpy.svg?branch=master)](https://travis-ci.com/rfechtner/webflowpy) [![PyPi Version](https://img.shields.io/pypi/v/Webflowpy.svg)](https://pypi.org/project/Webflowpy)
 
 # Webflow CMS API Client
 
