@@ -8,7 +8,10 @@ try:
     config = configparser.ConfigParser()
     config.read(configfile)
 except Exception:
-    config = {}
+    config = {
+        'General': {},
+        'Webflow': {}
+    }
 
 if 'verbosity' in config['General']:
     verbosity = int(config['General']['verbosity'])
