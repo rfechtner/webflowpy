@@ -49,6 +49,9 @@ The MIT license - see `LICENSE`.
 
 ## Changelog
 
-###### Dec 28th
+###### Jan 28th 2019
+* Bug Fix
+
+###### Dec 28th 2018
 
 * Initial release 
