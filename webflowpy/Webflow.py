@@ -38,7 +38,7 @@ class Webflow:
 
         try:
             response = requests_retry_session().request(
-                method, headers=self.headers, url=url, data=data
+                method, headers=self.headers, url=url, json=data
             )
             print("test")
         except Exception as x:
@@ -63,7 +63,7 @@ class Webflow:
         return self.__query('GET', '/sites/{site_id}'.format(site_id = site_id))
 
     def publishSite(self, site_id, domain_names):
-        return self.__query('POST', '/sites/{site_id}/publish'.format(site_id = site_id), data=domain_names)
+        return self.__query('POST', '/sites/{site_id}/publish'.format(site_id = site_id), json=domain_names)
 
     # DOMAINS
 
@@ -133,7 +133,7 @@ class Webflow:
 
         return self.__query('PATCH', '/collections/{collection_id}/items/{item_id}{live}'.format(
             collection_id=collection_id, item_id = item_id, live = l
-        ), data=data)
+        ), json=data)
 
     def removeItem(self, collection_id, item_id):
         return self.__query('DELETE', '/collections/{collection_id}/items/{item_id}'.format(
@@ -154,7 +154,7 @@ class Webflow:
 
         return self.__query(
             'PATCH', '/sites/{site_id}/order/{order_id}'.format(site_id=site_id, order_id=order_id),
-            data=data
+            json=data
         )
 
     def fulfillOrder(self, site_id, order_id):
@@ -183,7 +183,7 @@ class Webflow:
 
         return self.__query('PATCH', '/collections/{collection_id}/items/{item_id}/inventory'.format(
             collection_id=collection_id, item_id=item_id
-        ), data=data)
+        ), json=data)
 
     # WEBHOOKS
 
@@ -202,7 +202,7 @@ class Webflow:
             'filter': filter
         }
 
-        return self.__query('POST', '/sites/{site_id}/webhooks'.format(site_id=site_id), data=data)
+        return self.__query('POST', '/sites/{site_id}/webhooks'.format(site_id=site_id), json=data)
 
     def removeWebhook(self, site_id, webhook_id):
         return self.__query(
