@@ -51,7 +51,7 @@ def test_webflow_items_get_create_update_remove():
     resp = webflow.item(os.getenv('COLLECTION_ID'), os.getenv('ITEM_ID'))
     item_name = resp['items'][0]['name']
 
-    assert resp['count'] == 1
+    assert int(resp['count']) == 1
     assert item_name == "Id"
 
     # Create new live item
@@ -76,7 +76,7 @@ def test_webflow_items_get_create_update_remove():
 
     resp = webflow.updateItem(os.getenv('COLLECTION_ID'), new_item_id, update_item, live = True)
 
-    assert int(resp['name']) == new_name + "-update"
+    assert resp['name'] == new_name + "-update"
 
     # Delete item
     resp = webflow.removeItem(os.getenv('COLLECTION_ID'), new_item_id)
