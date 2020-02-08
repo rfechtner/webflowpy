@@ -28,12 +28,12 @@ Installation
 Install the package via PyPi:
 
 .. code::
- $ pip install webflowpy
+
+    $ pip install webflowpy
 
 
 Usage
 -----
-
 
 .. code:: python
 
@@ -46,7 +46,6 @@ Usage
     webflow_api.site(site_id='XXX')
 
 
-  
 The `Webflow` constructor takes several options to initialize the API client:
 
 - `token` - the API token **(can also be set via conf.ini - see settings.py)**
