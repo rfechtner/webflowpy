@@ -27,9 +27,9 @@ Installation
 
 Install the package via PyPi:
 
-```shell
-$ pip install webflowpy
-```
+.. code:: shell
+   $ pip install webflowpy
+
 
 ## Usage
 
