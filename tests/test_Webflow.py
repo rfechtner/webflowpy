@@ -30,12 +30,13 @@ def test_webflow_collection():
 
     assert resp['slug'] == 'tests'
 
-def test_webflow_items_limit_10_offset_2():
+def test_webflow_items_limit_10_offset_1():
     webflow = Webflow()
 
-    resp = webflow.items(os.getenv('COLLECTION_ID'), limit=10, offset=2)
+    resp = webflow.items(os.getenv('COLLECTION_ID'), limit=5, offset=1)
 
     assert resp['items'][0]['name'] == 'Fugiat Amet'
+    assert int(resp['count']) == 5
 
 def test_webflow_items_all():
     webflow = Webflow()
@@ -44,42 +45,41 @@ def test_webflow_items_all():
 
     assert int(resp['count']) > 10
 
-def test_webflow_items_get_create_update_remove():
+def test_webflow_get_single_item():
     webflow = Webflow()
 
     # Fetch an item
     resp = webflow.item(os.getenv('COLLECTION_ID'), os.getenv('ITEM_ID'))
-    item_name = resp['items'][0]['name']
-
     assert int(resp['count']) == 1
-    assert item_name == "Id"
+
+def test_webflow_create_update_remove_item():
+    webflow = Webflow()
 
     # Create new live item
-    new_name = item_name + '-test'
     new_item = {
-        'name': new_name,
-        'slug': 'test_create',
+        'name': 'webflowpy-test',
+        'slug': 'webflowpy-test',
         '_archived': False,
         '_draft': False
     }
+
     resp = webflow.createItem(os.getenv('COLLECTION_ID'), new_item, live=True)
     new_item_id = resp['_id']
-    assert resp['name'] == new_name
+
+    assert resp['name'] == new_item['name']
 
     # Update live item
     update_item = {
-        'name': new_name + "-update",
-        'slug': 'test_create',
-        '_id': new_item_id,
+        'name': 'webflowpy-test-update',
+        'slug': 'webflowpy-test',
         '_archived': False,
         '_draft': False
     }
 
-    resp = webflow.updateItem(os.getenv('COLLECTION_ID'), new_item_id, update_item, live = True)
-
-    assert resp['name'] == new_name + "-update"
+    resp = webflow.updateItem(os.getenv('COLLECTION_ID'), new_item_id, update_item, live=True)
+    new_item_id = resp['_id']
+    assert resp['name'] == 'webflowpy-test-update'
 
     # Delete item
     resp = webflow.removeItem(os.getenv('COLLECTION_ID'), new_item_id)
-
     assert resp['deleted'] == 1
