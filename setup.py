@@ -12,7 +12,7 @@ from io import open
 with open('requirements.txt', encoding='utf-8') as requirements:
     requires = [l.strip() for l in requirements]
 
-with open('README.md', encoding='utf-8') as readme_f:
+with open('README.rst', encoding='utf-8') as readme_f:
     readme = readme_f.read()
 
 setup(
