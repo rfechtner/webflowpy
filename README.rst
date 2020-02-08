@@ -1,4 +1,4 @@
-| |Build Status| |PyPI| |Docs|  
+| |Build Status| |PyPI| |PyPi Stats|  
 
 .. |Build Status| image:: https://travis-ci.org/rfechtner/webflowpy.svg?branch=master
    :target: https://travis-ci.org/rfechtner/webflowpy
