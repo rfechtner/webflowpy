@@ -83,3 +83,10 @@ def test_webflow_create_update_remove_item():
     # Delete item
     resp = webflow.removeItem(os.getenv('COLLECTION_ID'), new_item_id)
     assert resp['deleted'] == 1
+
+def test_webflow_publish():
+    webflow = Webflow()
+    domain_data = { "domains": ["webflowpy-tester.webflow.io"] }
+
+    resp = webflow.publishSite(os.getenv('SITE_ID'), domain_names=domain_data)
+    assert resp['queued']
