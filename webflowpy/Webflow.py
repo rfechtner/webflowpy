@@ -121,7 +121,7 @@ class Webflow:
 
         l = '?live=true' if live else ''
 
-        return self.__query('POST', '/collections/{collection_id}/items/{item_id}{live}'.format(
+        return self.__query('PUT', '/collections/{collection_id}/items/{item_id}{live}'.format(
             collection_id=collection_id, item_id = item_id, live = l
         ), data = data)
 
