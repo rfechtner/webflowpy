@@ -70,6 +70,7 @@ def test_webflow_items_get_create_update_remove():
     update_item = {
         'name': new_name + "-update",
         'slug': 'test_create',
+        '_id': new_item_id,
         '_archived': False,
         '_draft': False
     }
