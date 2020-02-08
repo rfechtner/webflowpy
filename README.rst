@@ -31,7 +31,8 @@ Install the package via PyPi:
    $ pip install webflowpy
 
 
-## Usage
+Usage
+-----
 
 .. code-block:: python
    from webflowpy.Webflow import Webflow
