@@ -42,7 +42,7 @@ def test_webflow_items_all():
 
     resp = webflow.items(os.getenv('COLLECTION_ID'), all = True)
 
-    assert int(resp['count']) == 20
+    assert int(resp['count']) > 10
 
 def test_webflow_items_get_create_update_remove():
     webflow = Webflow()
