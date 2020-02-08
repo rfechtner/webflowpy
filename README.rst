@@ -27,7 +27,7 @@ Installation
 
 Install the package via PyPi:
 
-::
+.. code-block:: shell
    $ pip install webflowpy
 
 
@@ -63,9 +63,9 @@ Changelog
 ---------
 
 Jan 28th 2019
-˜˜˜˜˜˜˜˜˜˜˜˜˜
+_____________
 * Bug Fix
 
 Dec 28th 2018
-˜˜˜˜˜˜˜˜˜˜˜˜˜
+_____________
 * Initial release 
