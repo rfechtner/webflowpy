@@ -34,14 +34,18 @@ Install the package via PyPi:
 Usage
 -----
 
-.. code-block:: python
- from webflowpy.Webflow import Webflow
 
- # Initialize the API
- webflow_api = Webflow();
+.. code:: python
 
- # Fetch a site
- webflow_api.site(site_id='580e63e98c9a982ac9b8b741')
+    from webflowpy.Webflow import Webflow
+
+    # Initialize the API
+    webflow_api = Webflow()
+
+    # Fetch a site
+    webflow_api.site(site_id='XXX')
+
+
   
 The `Webflow` constructor takes several options to initialize the API client:
 
