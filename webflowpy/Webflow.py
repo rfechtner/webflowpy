@@ -63,7 +63,7 @@ class Webflow:
         return self.__query('GET', '/sites/{site_id}'.format(site_id = site_id))
 
     def publishSite(self, site_id, domain_names):
-        return self.__query('POST', '/sites/{site_id}/publish'.format(site_id = site_id), json=domain_names)
+        return self.__query('POST', '/sites/{site_id}/publish'.format(site_id = site_id), data=domain_names)
 
     # DOMAINS
 
@@ -121,7 +121,7 @@ class Webflow:
 
         l = '?live=true' if live else ''
 
-        return self.__query('POST', '/collections/{collection_id}/items/{item_id}{live}'.format(
+        return self.__query('PUT', '/collections/{collection_id}/items/{item_id}{live}'.format(
             collection_id=collection_id, item_id = item_id, live = l
         ), data = data)
 
@@ -133,7 +133,7 @@ class Webflow:
 
         return self.__query('PATCH', '/collections/{collection_id}/items/{item_id}{live}'.format(
             collection_id=collection_id, item_id = item_id, live = l
-        ), json=data)
+        ), data=data)
 
     def removeItem(self, collection_id, item_id):
         return self.__query('DELETE', '/collections/{collection_id}/items/{item_id}'.format(
@@ -154,7 +154,7 @@ class Webflow:
 
         return self.__query(
             'PATCH', '/sites/{site_id}/order/{order_id}'.format(site_id=site_id, order_id=order_id),
-            json=data
+            data=data
         )
 
     def fulfillOrder(self, site_id, order_id):
@@ -183,7 +183,7 @@ class Webflow:
 
         return self.__query('PATCH', '/collections/{collection_id}/items/{item_id}/inventory'.format(
             collection_id=collection_id, item_id=item_id
-        ), json=data)
+        ), data=data)
 
     # WEBHOOKS
 
@@ -202,7 +202,7 @@ class Webflow:
             'filter': filter
         }
 
-        return self.__query('POST', '/sites/{site_id}/webhooks'.format(site_id=site_id), json=data)
+        return self.__query('POST', '/sites/{site_id}/webhooks'.format(site_id=site_id), data=data)
 
     def removeWebhook(self, site_id, webhook_id):
         return self.__query(
