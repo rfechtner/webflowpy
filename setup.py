@@ -1,5 +1,5 @@
-from setuptools import setup
-from version import get_git_version
+from setuptools import setup, find_packages
+import versioneer
 
 # From http://bugs.python.org/issue15881
 try:
@@ -17,8 +17,9 @@ with open('README.md', encoding='utf-8') as readme_f:
 
 setup(
     name='Webflowpy',
-    version=get_git_version(),
-    packages=['webflowpy'],
+    version=versioneer.get_version(),
+    cmdclass=versioneer.get_cmdclass(),
+    packages=find_packages(),
     url='https://github.com/rfechtner/webflowpy',
     license='MIT License',
     author='Ron Fechtner',
