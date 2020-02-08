@@ -1,4 +1,12 @@
 from setuptools import setup
+from version import get_git_version
+
+# From http://bugs.python.org/issue15881
+try:
+    import multiprocessing
+except ImportError:
+    pass
+
 from io import open
 
 with open('requirements.txt', encoding='utf-8') as requirements:
@@ -9,7 +17,7 @@ with open('README.md', encoding='utf-8') as readme_f:
 
 setup(
     name='Webflowpy',
-    version='0.0.2',
+    version=get_git_version(),
     packages=['webflowpy'],
     url='https://github.com/rfechtner/webflowpy',
     license='MIT License',
