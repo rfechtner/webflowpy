@@ -184,6 +184,9 @@ class Webflow:
         return self.__query('PATCH', '/collections/{collection_id}/items/{item_id}/inventory'.format(
             collection_id=collection_id, item_id=item_id
         ), data=data)
+    
+    def products(self, site_id):
+        return self.__query('GET', '/sites/{site_id}/products'.format(site_id=site_id))
 
     # WEBHOOKS
 
