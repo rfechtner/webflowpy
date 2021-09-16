@@ -63,7 +63,9 @@ class Webflow:
         return self.__query('GET', '/sites/{site_id}'.format(site_id = site_id))
 
     def publishSite(self, site_id, domain_names):
-        return self.__query('POST', '/sites/{site_id}/publish'.format(site_id = site_id), data=domain_names)
+        """Takes site_id->str and domain_names->list as arguments"""
+        domains = {"domains": domain_names}
+        return self.__query('POST', '/sites/{site_id}/publish'.format(site_id = site_id), data=domains)
 
     # DOMAINS
 
