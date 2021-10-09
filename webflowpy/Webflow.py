@@ -40,7 +40,6 @@ class Webflow:
             response = requests_retry_session().request(
                 method, headers=self.headers, url=url, json=data
             )
-            print("test")
         except Exception as x:
             logg.error("No valid response after {retries} attempts. Aborting!".format(retries = settings.retries + 1))
             if settings.abort_on_error:
