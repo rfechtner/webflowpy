@@ -1,7 +1,7 @@
 import configparser
 import os
 
-configfile = 'C:/Users/rfechtner/PycharmProjects/webflowpy/config.ini'
+configfile = os.path.expanduser('~/.config/webflowpy/config.ini')
 """Config file path"""
 
 try:
